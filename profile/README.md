@@ -3,42 +3,58 @@
 Decentralized AI inference. Rules, not process.
 
 ```
-$ clawd provide start    # Share idle AI capacity, earn USDC
-$ clawd credits add 10   # Access top AI models, pay with crypto
-$ clawd build            # Contribute code, earn future revenue
-```
-
-### Architecture
-
-```
-CONSUMER ──> RELAY ──> PROVIDER
+CONSUMER ──> RELAY ──> PROVIDER ──> AI MODEL
    |            |          |
    └────── SOLANA CHAIN ───┘
+
+Relay sees who, not what. Provider sees what, not who.
+```
+
+### Status: Testnet Live
+
+```
+[x] E2E verified: Consumer → Relay → Provider → Claude
+[x] Streaming + envelope encryption (tweetnacl)
+[x] 36/36 tests passing
+[x] 12 module design specs (4385 lines)
+[x] 10 desired-state tasks for AI agents
+[ ] Multi-provider support
+[ ] On-chain settlement (Solana)
+[ ] RBOB scoring system
 ```
 
 ### Repositories
 
-| Repo | Description |
-|------|-------------|
-| [website](https://github.com/runveil-io/website) | Protocol website — [runveil.io](https://runveil.io) |
-| [core](https://github.com/runveil-io/core) | Protocol core — clawd CLI, relay, provider |
-| [contracts](https://github.com/runveil-io/contracts) | Solana programs — Registry, Escrow, Staking |
-| [docs](https://github.com/runveil-io/docs) | Documentation and specifications |
-| [whitepaper](https://github.com/runveil-io/whitepaper) | Protocol whitepaper |
+| Repo | Description | Status |
+|------|-------------|--------|
+| [core](https://github.com/runveil-io/core) | Protocol core — consumer, relay, provider, crypto | ✅ Testnet |
+| [website](https://github.com/runveil-io/website) | [runveil.io](https://runveil.io) | ✅ Live |
+| [whitepaper](https://github.com/runveil-io/whitepaper) | Protocol whitepaper (15 chapters) | ✅ Published |
+| [contracts](https://github.com/runveil-io/contracts) | Solana programs — Registry, Escrow, Staking | ⏳ Stage 2 |
+| [docs](https://github.com/runveil-io/docs) | Documentation and specifications | ✅ Published |
 
-### Build Protocol (RBOB)
+### Build with Your Agent
 
-Four rules. Everything else emerges.
+```bash
+git clone https://github.com/runveil-io/core.git && cd core
+npm install && npm test              # 36/36 passing
+ls desired/                          # 10 tasks, pick one
+```
+
+Merged code earns RBOB points. Early builders get 5x Genesis Bonus.
+Points convert to TOKEN at TGE.
+
+[Design docs →](https://github.com/runveil-io/core/tree/main/docs/design)
+
+### RBOB — Four Rules
 
 ```
 R1: Code that passes verification can be merged.
 R2: Merge requires K independent stake signatures.
 R3: Protected modules require higher threshold.
-R4: Surviving code earns future revenue share.
+R4: Surviving code earns points. Points = future revenue share.
 ```
-
-[Read the whitepaper →](https://runveil.io/whitepaper)
 
 ---
 
-**[runveil.io](https://runveil.io)** · [Twitter](https://x.com/runveil_io) · [Telegram](https://t.me/runveil)
+**[runveil.io](https://runveil.io)** · [Twitter](https://x.com/runveil_io) · [Telegram](https://t.me/+XJ-ogZ9hBy44ZmFl)
